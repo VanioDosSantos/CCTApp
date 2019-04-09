@@ -1,0 +1,138 @@
+.css-poster-head {
+    height: auto !important;
+    background-color: #65ecaf;
+    background-size: cover;
+    background-position: center;
+    /*text-align: center;*/
+    color: #ffffff;
+    padding: 0px 15px 30px 15px !important;
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(bottom left, #27c980, #65ecaf);
+    /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradient(bottom left, #27c980, #65ecaf);
+    /* For Firefox 3.6 to 15 */
+    background: -moz-linear-gradient(bottom left, #27c980, #65ecaf);
+    /* Standard syntax */
+    background: linear-gradient(bottom left, #27c980, #65ecaf);
+}
+.css-poster-head h5 {
+    text-align: center;
+    font-weight: 400;
+    position: relative;
+    top: 46%;
+    /*#22FF9B*/
+}
+
+/*.css-poster-head .col-sm-4 {
+  padding: 0px;
+}*/
+
+.css-poster-A4 {
+    text-align: center;
+    height: 160px;
+    width: 120px;
+    position: relative;
+    margin: auto;
+    border-radius: 2px;
+}
+.css-poster-A3 {
+    text-align: center;
+    height: 200px;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    border-radius: 2px;
+}
+.css-poster-banner {
+    text-align: center;
+    text-align: center;
+    height: 175px;
+    width: 275px;
+    position: relative;
+    margin: auto;
+    border-radius: 3px;
+}
+.css-posters-stripTwo {
+    padding: 10px 25px 5px 25px !important;
+}
+.css-posters-stripThree {
+    padding: 10px 25px 30px 25px !important;
+}
+.css-posters-stripOne {
+    padding: 25px 25px 10px 25px !important;
+    font-size: 16px;
+    color: #FFFFFF !important;
+}
+.css-posters-stripTwo h3 {
+    color: #124E88;
+    /*font-weight: 300;*/
+    text-align: center;
+}
+.css-posters-stripThree h3 {
+    color: #124E88;
+    /*font-weight: 300;*/
+    text-align: center;
+}
+.css-posters-stripTwo p {
+    text-align: center;
+}
+.css-posters-required {
+    list-style-type: none;
+    line-height: 275%;
+    font-size: 14px;
+    font-weight: 400;
+    text-indent: 20%;
+}
+.css-posters-required h4 {
+    color: #124E88;
+    font-weight: 500;
+}
+.css-posters-stripTwo img {
+    width: 200px;
+    display: block;
+    margin: 0 auto !important;
+    border-radius: 3px;
+}
+.css-underline {
+    text-decoration: underline;
+}
+.css-posters-posting {
+    text-align: center;
+    list-style-type: none;
+    /*text-indent: -40px;*/
+    line-height: 275%;
+}
+.css-posters-posting li {
+    list-style-type: none;
+    text-decoration: none;
+}
+.css-posters-posting h4 {
+    color: #124E88;
+    font-weight: 500;
+}
+.css-block-highlight {
+    /*color: #124E88;*/
+    text-align: center;
+    font-weight: 300;
+    line-height: 200%;
+    font-size: 14px;
+}
+.css-block-highlight-light {
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 300;
+    line-height: 200%;
+    font-size: 14px;
+}
+@media screen and (max-width: 767px) {
+    .css-posters-posting {
+        text-align: center;
+        /*text-indent: -40px;*/
+        padding: 0px;
+    }
+}
+@media screen and (max-width: 958px) {
+    .css-posters-posting {
+        font-size: 0.75em;
+    }
+}

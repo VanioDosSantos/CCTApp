@@ -1,0 +1,16 @@
+.css-login-container {
+  position: relative;
+  margin: 0 auto;
+  top: 100px;
+  text-align: center;
+  width: 90%;
+  height: 400px !important;
+}
+.css-login-container h1 {
+  font-family: Quicksand-bold;
+  color: #252525;
+}
+.css-login-container .form-control {
+  width: 300px;
+  margin: 0 auto;
+}

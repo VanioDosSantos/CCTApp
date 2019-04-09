@@ -1,0 +1,314 @@
+.slideShow {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    height: 500px !important;
+    /*height: 467px !important;*/
+    /*height: 335px !important;*/
+}
+.slideShow div {
+    height: 100%;
+}
+#slider {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+#slider div {
+    width: 100%;
+    float: left;
+    position: absolute;
+}
+.one {
+    background-image: url(/images/slide_cct2.png);
+    background-position: center;
+}
+.two {
+    background-image: url(/images/slide_cct.png);
+    background-position: center;
+}
+.three {
+    background-image: url(/images/slide_cct2.png);
+    background-position: center;
+}
+.hidden {
+    position: absolute;
+    display: none;
+}
+.next {
+    position: static;
+    display: block;
+    float: right;
+}
+#nextBtn {
+    position: absolute;
+    float: right;
+    opacity: 0.6;
+    right: 0px;
+    font-size: 48px;
+    color: #252525;
+    top: 160px;
+}
+#prevBtn {
+    position: absolute;
+    float: left;
+    left: 0px;
+    opacity: 0.6;
+    font-size: 48px;
+    color: #252525;
+    top: 160px;
+}
+#nextBtn:hover {
+    opacity: 1.0;
+}
+#prevBtn:hover {
+    opacity: 1.0;
+}
+.css-more-arrow {
+    text-align: center;
+    z-index: 50;
+    font-size: 80px;
+    display: block;
+    top: -75px;
+    color: #FFFFFF;
+    opacity: 0.4;
+    width: 100px;
+    margin: 0 auto !important;
+}
+.css-today {
+    color: #65ecaf;
+    font-weight: 500;
+}
+.css-cct-info {
+    width: auto !important;
+    margin: 0 auto !important;
+    text-align: justify !important;
+}
+.css-cct-info span {
+    display: block;
+    margin-top: -7px;
+    text-align: center;
+}
+.css-cct-info a {
+    color: #FFFFFF;
+}
+.css-home-stripOne {
+    position: relative;
+    background-color: #124E88;
+    height: auto !important;
+    width: 100%;
+    color: #ffffff;
+    font-weight: 300;
+}
+.css-center-header {
+    position: relative;
+    margin: 0 auto;
+    border-bottom: 1px solid #419bf9;
+    padding-top: 8px;
+    width: 150px !important;
+    text-align: center;
+}
+.css-center-headerTwo {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 8px;
+    width: auto !important;
+}
+.css-center-headerTwo .cs-home-h4 {
+    text-align: center;
+    font-weight: 550;
+    color: #419bf9;
+    margin-bottom: 1px;
+}
+.css-other-side {
+    background-color: #126AC0;
+    height: 100% !important;
+}
+.css-home-stripTwo {
+    padding: 0px 0px 10px 0px;
+}
+.css-home-stripTwo .css-home-text {
+    padding: 30px 70px 40px 70px !important;
+    text-align: center;
+    color: #858585;
+}
+.css-home-stripThree .css-home-text {
+    padding: 20px 35px 20px 35px;
+    text-align: justify;
+    height: auto;
+    color: #FFFFFF;
+}
+.css-dark-header {
+    color: #3B3B3B;
+    font-weight: 300;
+    padding-bottom: 7px;
+    width: 150px !important;
+    border-bottom: 2px solid #419bf9;
+    margin: 0 auto !important;
+    text-align: center;
+}
+.css-accent-header {
+    color: #419bf9;
+    font-weight: 300;
+}
+.css-home-text {
+    position: relative;
+    margin: 0 auto;
+    line-height: 200%;
+}
+.css-home-text p {
+    text-indent: 30px;
+}
+.css-home-label {
+    text-align: center;
+    width: 100%;
+    color: #FFFFFF;
+}
+.css-home-stripFour {
+    position: relative;
+    /*background-color: #124E88;*/
+    height: auto !important;
+    width: 100%;
+    color: #FFFFFF;
+    padding: 30px 20px 50px 20px;
+    font-weight: 300;
+}
+.css-home-stripFour .css-cct-info {
+    line-height: 200%;
+}
+.css-home-todayEvents {
+    background-color: #F8F8F8;
+    height: auto;
+    /*width: 100%;*/
+    margin: 0 auto !important;
+    padding: 0px !important;
+}
+.css-home-todayEvents .row {
+    margin: 0 auto !important;
+    padding: 0px !important;
+}
+.css-home-table {
+    width: 80%;
+    margin: 0 auto;
+}
+.js-new-event {
+    padding-left: 20px;
+    color: #65ecaf;
+    font-size: 18px;
+}
+.css-home-table {
+    padding: 10px 10px 35px 10px;
+}
+.css-home-stripFive {
+    position: relative;
+    background-color: #3B3B3B;
+    height: auto !important;
+    width: 100%;
+    color: #FFFFFF;
+    padding: 10px 10px 30px 20px;
+    font-weight: 300;
+}
+.css-footer {
+    position: relative;
+    height: auto !important;
+    padding: 40px 20px 20px 20px;
+}
+.css-footer label {
+    border-bottom: 2px solid #aaaaaa;
+    padding-bottom: 5px;
+    width: 250px;
+    margin: 10px auto !important;
+    display: block;
+    font-size: 18px;
+}
+.css-footer a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.css-footer a:hover {
+    color: #126AC0;
+}
+.css-footer-links {
+    /*padding-left: 25px;*/
+}
+.css-footer-links ul {
+    list-style: none;
+    line-height: 250%;
+}
+.css-footer-end {
+    position: relative;
+    height: auto !important;
+    padding: 20px !important;
+    background-color: #363636;
+    color: #FFFFFF;
+}
+.css-home-stripTwoThree {
+    padding: 0px 0px 10px 0px;
+    width: auto !important;
+}
+.css-home-stripTwoThree img {
+    border-radius: 50%;
+    margin: 0 auto !important;
+    width: 150px;
+    display: block;
+}
+.css-home-stripTwoThree .col-sm-12 {
+    padding: 30px 70px 10px 70px !important;
+    text-align: center;
+}
+.css-background-pic {
+    padding: 0px !important;
+    margin: 0px !important;
+    /*height: 330px;*/
+    height: 100% !important;
+}
+.css-background-pic div {
+    height: 100% !important;
+    background-image: url(/images/scc.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.x {
+    background-image: url(/images/scc.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.css-home-image-strip {
+    height: 330px !important;
+    background-image: url(/images/scc2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.css-gradient {
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(bottom left, #124E88, #126AC0);
+    /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradient(bottom left, #124E88, #126AC0);
+    /* For Firefox 3.6 to 15 */
+    background: -moz-linear-gradient(bottom left, #124E88, #126AC0);
+    /* Standard syntax */
+    background: linear-gradient(bottom left, #124E88, #126AC0);
+}
+.css-gradient-invert {
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(bottom left, #126AC0, #124E88);
+    /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradient(bottom left, #126AC0, #124E88);
+    /* For Firefox 3.6 to 15 */
+    background: -moz-linear-gradient(bottom left, #126AC0, #124E88);
+    /* Standard syntax */
+    background: linear-gradient(bottom left, #126AC0, #124E88);
+}
+.css-gradient-light {
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(bottom left, #f7f7f7, #FFFFFF);
+    /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradient(bottom left, #f7f7f7, #FFFFFF);
+    /* For Firefox 3.6 to 15 */
+    background: -moz-linear-gradient(bottom left, #f7f7f7, #FFFFFF);
+    /* Standard syntax */
+    background: linear-gradient(bottom left, #f7f7f7, #FFFFFF);
+}
+@media screen and (max-width: 1362px) {}
+@media screen and (max-width: 959px) {}
+@media screen and (max-width: 640px) {}

@@ -1,0 +1,101 @@
+<template name="admin">
+
+    <div class="container">
+        <!-- <div class="row"> -->
+        <div class="col-sm-12">
+            <div class="css-page-header">
+                <h2>Signup<span class="css-label-header">register new CCT members</span></h2>
+            </div>
+
+            <div class="css-signup-form row">
+                <div class="col-sm-5">
+                    <br>
+                    <label>First Name</label>
+                    <input class="js-signup-first form-control" type="text">
+                </div>
+                <div class="col-sm-5">
+                    <br>
+                    <label>Last Name</label>
+                    <input class="js-signup-last form-control" type="text">
+                </div>
+                <div class="col-sm-2">
+                    <br>
+                    <label>Birthday</label>
+                    <input class="js-signup-birth form-control" type="text" placeholder="Ex: 02/08">
+                </div>
+                <div class="col-sm-10">
+                    <br>
+                    <label>Email<span class="css-label-title">@brandeis.edu</span></label>
+                    <input class="js-signup-email form-control" type="text">
+                </div>
+                <div class="col-sm-2">
+                  <br>
+                    <label>Supervisor</label>
+                    <select class="js-signup-super form-control">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="col-sm-5">
+                    <br>
+                    <label>Password<span class="css-label-title">8 characters min.</span></label>
+                    <input class="js-signup-password form-control" type="password">
+                </div>
+                <div class="col-sm-5">
+                    <br>
+                    <label>Confirm</label>
+                    <input class="js-signup-password-check form-control" type="password" placeholder="Confirm Password">
+                </div>
+                <div class="col-sm-2">
+                    <br>
+                    <label>Administrator</label>
+                    <select class="js-signup-admin form-control">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="col-sm-10">
+                    <br>
+                    <label>Greeting<span class="css-label-title">brighten their day</span></label>
+                    <input class="js-signup-greet form-control" type="text">
+                </div>
+                <!-- <div class="col-sm-2">
+
+                  </div> -->
+                <div class="col-sm-5">
+                    <br>
+                    <input class="js-signup-btn css-full-btn btn" type="button" value="Sign up!">
+                </div>
+                <div class="col-sm-7">
+
+                </div>
+
+                <!-- next form -->
+                <div class="col-sm-12 css-page-header">
+                    <h2>New Equipment<span class="css-label-header">add new equipment</span></h2>
+                    <br>
+                    <br>
+                </div>
+
+                <form class="js-new-equip" action="admin.html" method="post">
+                    <div class="col-sm-10">
+                        <input class="js-new-equip-name form-control" type="text" placeholder="Equipment">
+                        <br>
+                    </div>
+                    <div class="col-sm-2">
+                        <input class="css-full-btn btn" type="submit" value="Add">
+                    </div>
+                </form>
+            </div>
+            <br>
+        </div>
+        <!-- <div class="col-sm-3 css-side-pane">
+              <div class="css-pane">
+
+              </div>
+          </div> -->
+
+        <!-- </div> -->
+    </div>
+
+</template>

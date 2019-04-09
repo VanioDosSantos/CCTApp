@@ -1,0 +1,195 @@
+<template name="info">
+    <div class="container">
+      <div class="css-page-header">
+          <h2>Info Booth<span class="css-label-header">let the team know what's up</span></h2>
+      </div>
+
+        <!-- <br> -->
+        <div class="col-sm-9 row">
+            {{#if thread}}
+            <div class="css-info-chat">
+
+                {{#each thread}}
+                {{#if equals mine user}}
+
+                <div class="css-thread-container r" align="right">
+                    <span class="css-thread-time">{{timeStamp}}</span>
+                    <span class="css-thread-username">{{username}}</span>
+                    <div class="css-info-chat-thread css-thread-current">
+                        <span>{{text}}</span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                {{else}}
+
+                <div class="css-thread-container l" align="left">
+                    <span class="css-thread-time">{{timeStamp}}</span>
+                    <span class="css-thread-username">{{username}}</span>
+                    <div class="css-info-chat-thread css-thread-others">
+                        <span>{{text}}</span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                {{/if}}
+                {{/each}}
+
+            </div>
+            {{else}}
+                <h5 class="css-no-thread">It's lonely here. Say something...</h5>
+            {{/if}}
+            <br>
+            <form class="js-info-chat" action="index.html" method="post">
+                <div class="col-sm-9 css-info-input">
+                    <input class="js-info-chat-thread form-control" type="text" placeholder="Say something worth mentioning..." autofocus>
+                    <br>
+                </div>
+                <div class="col-sm-3 css-info-input">
+                    <button class="css-input-element btn glyphicon glyphicon-send" data-html="true" type="submit"></button>
+                </div>
+            </form>
+
+            <div class="css-page-header">
+                <h2>Booth Loans<span class="css-label-header">auxiliary loans</span></h2>
+            </div>
+
+            <div class="col-sm-7 css-info-input">
+              <input class="js-info-loan-user form-control" type="text" placeholder="Full name">
+              <br>
+            </div>
+            <div class="col-sm-5 css-info-input">
+              <select class="js-info-loan-item form-control css-input-element">
+                <option value="VGA Cable">VGA Cable</option>
+                <option value="HDMI Cord">HDMI Cord</option>
+                <option value="Dry Erase Markers">Dry Erase Markers</option>
+                <option value="Stapler">Stapler</option>
+                <option value="Power Cord">Power Cord</option>
+                <option value="Scissors">Scissors</option>
+                <option value="Tape">Tape</option>
+              </select>
+              <br>
+              <br>
+              <button class="js-info-loan-log css-input-element btn" type="button">Log it</button>
+            </div>
+
+            {{#if auxiliary}}
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Currently out</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each auxiliary}}
+                    <tr>
+                        <td class="css-pad">{{item}}</td>
+                        <td class="css-pad">{{student}}</td>
+                        <td class="css-pad">
+                            <button class="js-info-loan-return btn" type="button">Returned</button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{/if}}
+
+            <hr>
+
+            <div class="css-page-header">
+                <h2>Problem Report<span class="css-label-header">wanna get Johnny's attention?</span></h2>
+            </div>
+            <!-- <br> -->
+
+            <form class="js-info-problem-report" action="index.html" method="post">
+                <div class="col-sm-12">
+                  <select class="js-info-problem-category form-control">
+                      <option value="Info Booth">Info Booth</option>
+                      <option value="General">General</option>
+                      <option value="Game Room">Game Room</option>
+                      <option value="Scheduling">Scheduling</option>
+                      <option value="SCC">SCC</option>
+                      <option value="Customer">Customer</option>
+                      <option value="Other">Other</option>
+                  </select>
+                  <br>
+                </div>
+                <div class="col-sm-9 css-info-input">
+                    <input class="js-info-problem form-control" type="text" placeholder="Any problem?" autofocus>
+                    <br>
+                </div>
+                <div class="col-sm-3 css-info-input">
+                    <button class="css-input-element btn glyphicon glyphicon-send" data-html="true" type="submit"></button>
+                </div>
+            </form>
+
+            {{#if solvedIssue}}
+            <div class="css-page-header">
+                <h2>Recently solved<span class="css-label-header">last 2 days</span></h2>
+            </div>
+            <!-- <br> -->
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each solvedIssue}}
+                    <tr>
+                        <td class="css-pad">{{text}} <span style="color: #00a900">[SOLVED]</span></td>
+                        <td class="css-pad" style="color: {{hex}}; font-weight: bold;">{{category}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{/if}}
+
+        </div>
+        <div class="col-sm-3">
+          <div class="css-hours-container">
+              <h4>Info Booth</h4>
+              <span class="{{today 'Weekday'}}">M, T, W, Th: 10AM - 10PM</span>
+              <br>
+              <span class="{{today 'Friday'}}">Friday: 10AM - 6PM</span>
+              <br>
+              <span class="{{today 'Saturday'}}">Saturday: 4PM - 12AM</span>
+              <br>
+              <span class="{{today 'Sunday'}}">Sunday: 4PM - 11PM</span>
+              <br>
+              <a href="tel:781-736-4770"><span class="css-phone-number">781-736-4770</span></a>
+              <br>
+
+              <h4>Game Room</h4>
+              <span class="{{today 'Weekday'}}">M, T, W, Th: 11AM - 11PM</span>
+              <br>
+              <span class="{{today 'Friday'}}">Friday: 1PM - 12AM</span>
+              <br>
+              <span class="{{today 'Saturday'}}">Saturday: 1PM - 12AM</span>
+              <br>
+              <span class="{{today 'Sunday'}}">Sunday: 1PM - 8PM</span>
+              <br>
+              <a href="tel:781-736-4772"><span class="css-phone-number">781-736-4772</span></a>
+              <br>
+              <br>
+
+              <a href="{{pathFor 'department'}}"><h6>Department Staff</h6></a>
+              <br>
+              <a href="{{pathFor 'team'}}"><h6>Team Contacts</h6></a>
+              <br>
+
+          </div>
+        </div>
+    </div>
+
+</template>

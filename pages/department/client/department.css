@@ -1,0 +1,47 @@
+.css-department-page-banner {
+  height: 350px !important;
+  background-image: url(/images/scc3.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+.css-department-page-banner h1 {
+  position: relative;
+  margin: 0px;
+  top: 45%;
+  font-weight: 200;
+  color: #FFFFFF;
+  font-family: Helvetica;
+  background-color: rgba(101, 236, 175, 0.40);
+  width: auto !important;
+}
+.css-staff-container {
+  text-align: center;
+  height: auto;
+  padding: 30px;
+  margin: 0 auto;
+  width: 70%;
+}
+.css-staff-container p {
+  font-size: 16px;
+}
+.css-dark-font {
+  color: #3B3B3B;
+}
+.css-light-font {
+  color: #FFFFFF;
+}
+.css-staff-container img {
+  width: 135px;
+  border-radius: 50%;
+
+}
+.css-light-strip {
+  background-color: #f7f7f7;
+}
+
+@media screen and (max-width: 767px) {
+  .css-page-banner h1 {
+    font-size: 1.7em !important;
+  }
+}

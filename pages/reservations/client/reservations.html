@@ -1,0 +1,152 @@
+<template name="reservations">
+    <div class="container">
+        <div class="sub-container-B">
+            <!-- <h2>Reservations<span class="css-label-header">equipment reservation calendar</span></h2> -->
+            <div class="css-calendar-container">
+
+                <div class="css-calendar-btns pull-right">
+                    <button class="btn css-calendar-prev" type="button">Previous</button>
+                    <button class="btn css-calendar-next" type="button">Next</button>
+                </div>
+
+                <div class="css-calendar-view-btns">
+                    <button class="btn  css-month-view {{currentView 'month'}}" type="button">Month</button>
+                    <button class="btn css-week-view {{currentView 'week'}}" type="button">Week</button>
+                </div>
+
+                <div class="css-calendar" id="calendar"></div>
+
+            </div>
+
+            <hr class="css-page-hr2">
+
+            <div class="css-page-header">
+                <h2>Equipment Live Status<span class="css-label-header"></span></h2>
+            </div>
+
+            <div class="css-reservTable">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Equipment</th>
+                            <th style="text-align: center;">Status</th>
+                            <th>Return</th>
+                            {{#if currentUser}}
+                            <th></th>
+                            {{/if}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each reserve}}
+                        <tr>
+                            <td class="css-pad">{{equipment}}</td>
+                            <td class="css-pad">
+                                <div class="css-status" data-toggle="tooltip" data-placement="top" title="{{returnTime}}" style="background-color: {{hex}};"></div>
+                            </td>
+                            <td class="css-pad">{{returnTime}}</td>
+                            {{#if currentUser}}
+                            <td style="text-align: center;">
+                                {{#if equals status "Available"}} {{#if equals reservedToday true}}
+                                <input class="js-equip-pickup btn" type="button" value="Picking up"> {{/if}} {{else}}
+                                <input class="js-equip-return btn" type="button" value="Returned"> {{/if}}
+                            </td>
+                            {{/if}}
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</template>
+
+<template name="newReservation">
+
+    <div class="modal fade" id="reservation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myModalLabel">Reservation</h3>
+                </div>
+
+                <div class="modal-body row">
+                    <div class="col-sm-12">
+                        <label>Reserving</label>
+                        <select class="js-equip-reserv form-control">
+                            {{#each reservable}}
+                            <option value="{{equipment}}">{{equipment}}</option>
+                            {{/each}}
+                        </select>
+                        <br>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Individual's Full Name</label>
+                        <input class="js-reserv-name form-control" type="text" value="{{individual}}">
+                        <br>
+                        <label>Organization/Group</label>
+                        <input class="js-reserv-org form-control" type="text" value="{{org}}">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Email</label>
+                        <input class="js-reserv-email form-control" type="email" value="{{email}}">
+                        <br>
+                        <label>Cell #</label>
+                        <input class="js-reserv-cell form-control" type="tel" value="{{cell}}">
+                    </div>
+                    <div class="col-sm-12">
+                        <br>
+                        <label>Reservation Period</label>
+                        <br>
+                        <div class="css-time-period">
+                            <div class="col-sm-5">
+                                <input class="js-reserv-from form-control css-form-control" id="datetimepickerFrom" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <span style="text-align: center !important;">until</span>
+                            </div>
+                            <div class="col-sm-5">
+                                <input class="js-reserv-until form-control css-form-control pull-right" id="datetimepickerUntil" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Forget it</button>
+                    <button type="button" class="js-reserv btn">Reserve it</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<template name="reserveInfo">
+    <!-- calendarItem -->
+    <div id="reserveInfo" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">{{reserve.title}}</h3>
+                </div>
+                <div class="modal-body">
+
+                    <p> Reserved: {{reserve.start}} <span class="pull-right"> Until: {{reserve.end}} </span></p>
+                    <p> Reserved by: {{reserve.individual}} <span class="pull-right"> For: {{{reserve.organization}}} </span></p>
+                    <p>
+                        <div class="css-calendar-info-tag"></div> Contact: {{reserve.cell}} </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Got it.</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</template>

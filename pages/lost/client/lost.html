@@ -1,0 +1,170 @@
+<template name="lost">
+    <div class="container">
+      <div class="sub-container">
+          <div class="css-page-header">
+              <h2>Lost &amp; Found<span class="css-label-header">find your lost items</span></h2>
+              {{#if currentUser}}
+              <button type="button" class="btn css-new-entry-btn" data-toggle="modal" data-target="#lost">New Entry</button>
+              {{/if}}
+          </div>
+          <br>
+          <div class="row css-lostandfound">
+              <form class="js-lost-search" action="lost.html" method="post">
+                <div class="col-sm-8">
+                    <label>Item<span class="css-label-title">type the item's name or something descriptive</span></label>
+                    <input class="form-control js-lost-search-input" type="text" autofocus>
+                </div>
+                <div class="col-sm-4">
+                    <input class="js-lost-search-btn btn" type="submit" value="Look it up">
+                </div>
+              </form>
+
+              {{#if lostAndFoundResults}}
+              <div class="css-lost-table">
+                  <table class="table table-condensed">
+                      <thead>
+                          <tr>
+                              <th>Item</th>
+                              <th class="css-table-column-hide">Date in</th>
+                              <th>Description</th>
+                              {{#if currentUser}}
+                              <th style="text-align: center;">Status</th>
+                              <th style="text-align: center;">Claimed</th>
+                              {{/if}}
+                          </tr>
+                      </thead>
+                      <tbody>
+                        {{#each lostAndFoundResults}}
+                          <tr>
+                              <td class="css-pad">{{item}}</td>
+                              <td class="css-pad css-table-column-hide">{{createdAt}}</td>
+                              <td class="css-pad">{{description}}</td>
+
+                              {{#if currentUser}}
+                              {{#if equals status "Lost"}}
+                              <td style="text-align: center;">
+                                  {{#if is found}}
+                                  <input class="js-lost-found btn" type="button" value="Found">
+                                  {{/if}}
+                              </td>
+                              {{else}}
+                              <td></td>
+                              {{/if}}
+
+                              <td style="text-align: center;">
+                                  <input class="js-lost-claimed btn" type="button" value="Claimed">
+                              </td>
+                              {{/if}}
+                          </tr>
+                          {{#if currentUser}} {{/if}}
+                          {{/each}}
+                      </tbody>
+                  </table>
+              </div>
+              {{/if}}
+
+          </div>
+
+          <div class="css-horizontal-info">
+              <div class="row">
+                  <div class="col-sm-4">
+                      <div class="css-horizontal-cct-info">
+                          <span>Info Booth</span>
+                          <br>
+                          <span class="{{today 'Weekday'}}">M, T, W, Th: 10AM - 10PM</span>
+                          <br>
+                          <span class="{{today 'Friday'}}">Friday: 10AM - 6PM</span>
+                          <br>
+                          <span class="{{today 'Saturday'}}">Saturday: 4PM - 12AM</span>
+                          <br>
+                          <span class="{{today 'Sunday'}}">Sunday: 4PM - 11PM</span>
+                          <br>
+                          <br>
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="css-horizontal-cct-info">
+                          <span>Game Room</span>
+                          <br>
+                          <span class="{{today 'Weekday'}}">M, T, W, Th: 11AM - 11PM</span>
+                          <br>
+                          <span class="{{today 'Friday'}}">Friday: 1PM - 12AM</span>
+                          <br>
+                          <span class="{{today 'Saturday'}}">Saturday: 1PM - 12AM</span>
+                          <br>
+                          <span class="{{today 'Sunday'}}">Sunday: 1PM - 8PM</span>
+                          <br>
+                          <br>
+                      </div>
+                  </div>
+                  <div class="col-sm-4">
+                      <div class="css-horizontal-cct-info">
+                          <a href="tel:781-736-4770"><span>Info Booth: 781-736-4770</span></a>
+                          <br>
+                          <a href="tel:781-736-4772"><span>Game Room: 781-736-4772</span></a>
+                          <br>
+                          <br>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+    </div>
+</template>
+
+<template name="newLost">
+
+    <div class="modal fade" id="lost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myModalLabel">Lost &amp; Found</h3>
+                </div>
+
+                <div class="modal-body row">
+                    <div class="col-sm-12">
+                      <label>Item was</label>
+                      <select class="js-lost-status form-control">
+                          <option value="Lost">Lost</option>
+                          <option value="Found">Found</option>
+                      </select>
+                      <br>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Individual's Full Name</label>
+                        <input class="js-lost-name form-control" type="text">
+                        <br>
+                        <label>Item</label>
+                        <input class="js-lost-item form-control" type="text">
+                        <br>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Email</label>
+                        <input class="js-lost-email form-control" type="email">
+                        <br>
+                        <label>Storage</label>
+                        <select class="js-lost-storage form-control">
+                            <option value="Booth: ID Box">Booth: ID Box</option>
+                            <option value="Booth: Drawers">Booth: Drawers</option>
+                            <option value="Booth: Bins">Booth: Bins</option>
+                            <option value="Booth: Safe">Booth: Safe</option>
+                            <option value="Game: Cabinet">Game: Cabinet</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <br>
+                        <label>Description<span class="css-label-title">140 characters max.</span></label>
+                        <textarea class="js-lost-description css-textarea-description form-control" rows="3" cols="20" maxlength="140"></textarea>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="js-lost-close btn" data-dismiss="modal">Nevermind</button>
+                    <button type="button" class="js-lost-archive btn">Archive it</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

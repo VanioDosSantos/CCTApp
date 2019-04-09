@@ -1,0 +1,37 @@
+<template name="profile">
+    <div class="container">
+      <div class="css-page-header">
+          <h2>Profile<span class="css-label-header">warm fuzzies &amp; settings</span></h2>
+      </div>
+
+      <div class="css-fuzzies">
+        <h4>Send Warm Fuzzies</h4>
+        <table class="table table-condensed">
+            <tbody>
+                {{#each fuzzy}}
+                <tr>
+                    <td class="css-pad">{{first}}</td>
+                    <td>
+                      <input class="form-control" type="text" placeholder="Send {{first}} a message">
+                    </td>
+                    <td>
+                      <button class="btn" type="button" name="button">Send Fuzzy</button>
+                    </td>
+                    <td class="css-pad">{{count}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+      </div>
+
+      <!-- if any fuzzies -->
+      <div class="css-page-header">
+          <h2>My Fuzzies</h2>
+      </div>
+
+      <div class="css-page-header">
+          <h2>Settings<span class="css-label-header">change your password</span></h2>
+      </div>
+
+    </div>
+</template>

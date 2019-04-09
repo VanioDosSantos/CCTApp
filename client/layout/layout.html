@@ -1,0 +1,241 @@
+<template name="layout">
+
+    <span class="css-alert"> {{> sAlert}} </span> {{> newLost}} {{> newReservation}} {{> newReset}} {{> resetInfo}} {{> reserveInfo}} {{> reservTable}} {{> homeEvent}} {{> sccFloorPlan}} {{notify}} {{scrollDown}}
+    <div class="css-link-slide-nav css-gradient">
+        <div class="css-empty"></div>
+
+        <a href="{{pathFor 'lost'}}">
+            <div class="css-side-link">Lost &amp; Found</div>
+        </a>
+        <a href="{{pathFor 'reservations'}}">
+            <div class="css-side-link">Reservations</div>
+        </a>
+        <a href="{{pathFor 'bikes'}}">
+            <div class="css-side-link">DeisBikes</div>
+        </a>
+        <a href="{{pathFor 'posters'}}">
+            <div class="css-side-link">Poster Policy</div>
+        </a>
+
+        {{#if currentUser}}
+        <hr class="css-horizontal-line">
+        <a class="css-display-none" href="{{pathFor 'info'}}">
+            <div class="css-side-link">Info Booth</div>
+        </a>
+        <a class="css-display-none" href="{{pathFor 'game'}}">
+            <div class="css-side-link">Game Room</div>
+        </a>
+        <a class="css-display-none" href="{{pathFor 'reset'}}">
+            <div class="css-side-link">Reset</div>
+        </a>
+        <hr class="css-horizontal-line">
+        <a class="css-display-none" href="{{pathFor 'schedule'}}">
+            <div class="css-side-link">Schedule</div>
+        </a>
+        {{#if admin}}
+        <hr class="css-horizontal-line">
+        <a class="css-display-none" href="{{pathFor 'admin'}}">
+            <div class="css-side-link">Admin</div>
+        </a>
+        <a class="css-display-none" href="{{pathFor 'overview'}}">
+            <div class="css-side-link">Overview</div>
+        </a>
+        {{/if}}
+        <hr class="css-horizontal-line">
+        <a href="{{pathFor 'profile'}}">
+            <div class="css-side-link">Profile</div>
+        </a>
+        <hr class="css-horizontal-line">
+        <a href="#">
+            <div class="css-side-link js-logout">Log out</div>
+        </a>
+        {{/if}}
+
+    </div>
+
+    <div class="css-link-slide-nav-container"></div>
+
+    <div class="css-nav row">
+        <div class="col-sm-2">
+            <a class="link" href="#">
+                <span class="css-more glyphicon glyphicon-menu-hamburger"></span>
+            </a>
+            <a class="link" href="{{pathFor 'home'}}">
+                <div class="css-brand">CCT</div>
+            </a>
+            {{#if currentUser}}
+            <a class="link dropdown css-notification-contain" href="#">
+                <span class="badge link css-notification" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						{{notificationNum}}
+				</span>
+                <ul class="dropdown-menu css-notif-menu">
+                    {{#if notification}} {{#each notification}} {{#if seen}}
+                    <a href="#" class="js-notification-seen css-notif-seen">
+                        <li>{{who}} | {{textSample}}</li>
+                    </a>
+                    <hr class="css-horizontal-line"> {{else}}
+                    <a href="#" class="js-notification-seen css-notif-not-see">
+                        <li>{{who}} | {{textSample}}</li>
+                    </a>
+                    <hr class="css-horizontal-line"> {{/if}} {{/each}} {{else}}
+                    <li>Nothing here.</li>
+                    {{/if}}
+                </ul>
+            </a>
+            {{/if}}
+        </div>
+        <div class="col-sm-2 css-nav-link-container {{highlight 'lost'}}">
+            <a class="link" href="{{pathFor 'lost'}}">
+                <div class="css-nav-link">Lost &amp; Found</div>
+            </a>
+        </div>
+        <div class="col-sm-2 css-nav-link-container {{highlight 'reservations'}}">
+            <a class="link" href="{{pathFor 'reservations'}}">
+                <div class="css-nav-link">Reservations</div>
+            </a>
+        </div>
+        <div class="col-sm-2 css-nav-link-container {{highlight 'bikes'}}">
+            <a class="link" href="{{pathFor 'bikes'}}">
+                <div class="css-nav-link">DeisBikes</div>
+            </a>
+        </div>
+        <div class="col-sm-2 css-nav-link-container {{highlight 'poster'}}">
+            <a class="link" href="{{pathFor 'posters'}}">
+                <div class="css-nav-link">Poster Policy</div>
+            </a>
+        </div>
+        {{#if currentUser}}
+        <a class="link dropdown" href="#">
+            <div class="col-sm-1 css-nav-link-container" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="css-nav-link"><span class="badge">{{notificationNum}}</span></div>
+            </div>
+            <ul class="dropdown-menu css-notif-menu">
+                {{#if notification}} {{#each notification}} {{#if seen}}
+                <a href="#" class="js-notification-seen css-notif-seen">
+                    <li>{{who}} | {{textSample}}</li>
+                </a>
+                <hr class="css-horizontal-line"> {{else}}
+                <a href="#" class="js-notification-seen css-notif-not-see">
+                    <li>{{who}} | {{textSample}}</li>
+                </a>
+                <hr class="css-horizontal-line"> {{/if}} {{/each}} {{else}}
+                <li>Nothing here.</li>
+                {{/if}}
+            </ul>
+        </a>
+        {{else}}
+        <div class="col-sm-1"></div>
+        {{/if}} {{#if currentUser}}
+        <a class="link dropdown" href="#">
+            <div class="col-sm-1 css-nav-link-container" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-option-horizontal"></span>
+            </div>
+            <ul class="dropdown-menu css-more-menu">
+                <a href="{{pathFor 'info'}}">
+                    <li>Info Booth</li>
+                </a>
+                <a href="{{pathFor 'game'}}">
+                    <li>Game Room</li>
+                </a>
+                <a href="{{pathFor 'reset'}}">
+                    <li>Reset</li>
+                </a>
+                <hr class="css-horizontal-line">
+                <a href="{{pathFor 'profile'}}">
+                    <li>Profile</li>
+                </a>
+                <a href="{{pathFor 'schedule'}}">
+                    <li>Schedule</li>
+                </a>
+                <hr class="css-horizontal-line">
+                <a class="js-logout" href="#">
+                    <li>Log out</li>
+                </a>
+            </ul>
+        </a>
+        {{else}}
+        <div class="col-sm-1"></div>
+        {{/if}}
+
+        <div class="col-sm-12 css-nav-border-placeholder"></div>
+
+    </div>
+
+    <div class="row css-page">
+
+        {{#if currentUser}} {{#if inHomeRoute}}
+        <div class="col-sm-12">
+            <div class="css-empty"></div>
+            {{> yield}}
+        </div>
+        {{else}}
+        <div class="col-sm-1 css-side-nav-container">
+            <div class="css-side-nav">
+                <ul class="nav">
+                    <li class="css-empty"></li>
+
+                    <a class="link" href="{{pathFor 'info'}}">
+                        <li>
+                            <span class="css-side-nav-link {{sideNavHighlight 'info'}}">
+							<!-- <span class="glyphicon glyphicon-info-sign"></span> -->
+                            <img class="css-side-icons" src="/images/global.svg">
+                            <p class="">Info Booth</p>
+                            </span>
+                        </li>
+                    </a>
+                    <a class="link" href="{{pathFor 'game'}}">
+                        <li>
+                            <span class="css-side-nav-link {{sideNavHighlight 'game'}}">
+							<!-- <span class="glyphicon glyphicon-knight"></span> -->
+                            <img class="css-side-icons" src="/images/controller.svg">
+                            <p>Game Room</p>
+                            </span>
+                        </li>
+                    </a>
+                    <a class="link" href="{{pathFor 'reset'}}">
+                        <li>
+                            <span class="css-side-nav-link {{sideNavHighlight 'reset'}}">
+							<!-- <span class="glyphicon glyphicon-repeat"></span> -->
+                            <img class="css-side-icons" src="/images/clock.svg">
+                            <p>Reset</p>
+                            </span>
+                        </li>
+                    </a>
+                    <li class="css-empty"></li>
+
+					<a class="link" href="{{pathFor 'schedule'}}">
+                        <li class="css-side-nav-admin {{sideNavHighlight 'schedule'}}">Schedule</li>
+                    </a>
+
+                    {{#if admin}}
+                    <a class="link" href="{{pathFor 'admin'}}">
+                        <li class="css-side-nav-admin {{sideNavHighlight 'admin'}}">Admin</li>
+                    </a>
+
+                    <a class="link" href="{{pathFor 'overview'}}">
+                        <li class="css-side-nav-admin {{sideNavHighlight 'overview'}}">Overview</li>
+                    </a>
+                    {{/if}}
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-11 css-content-container">
+            <div class="css-empty"></div>
+            <div class="container-fluid">
+                {{> yield}}
+            </div>
+        </div>
+        {{/if}} {{else}}
+        <div class="col-sm-12">
+            <div class="css-empty"></div>
+            <div class="container-fluid">
+                {{> yield}}
+            </div>
+        </div>
+        {{/if}}
+
+    </div>
+
+</template>

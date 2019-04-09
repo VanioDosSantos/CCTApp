@@ -1,0 +1,94 @@
+.sub-container-B {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+}
+.css-calendar-container {
+    position: relative;
+    margin-top: 30px;
+    width: auto !important;
+    height: auto !important;
+}
+.css-calendar-btns {
+    position: relative;
+    z-index: 2;
+    /*margin-left: 20px;*/
+    float: left !important;
+}
+.fc-h-event {
+    background-color: #65ecaf;
+    /*background-color: #126AC0;*/
+    /*background-color: #419bf9;*/
+    border: none;
+}
+.fc-today {
+    background-color: #BCFDE0!important;
+    opacity: 0.6;
+}
+.fc-event {
+    background-color: #65ecaf;
+    border: 1px solid #90D1B4;
+}
+/*.css-form-control {
+    width: 260px;
+    display: inline-block;
+}*/
+.css-calendar-view-btns {
+    position: relative;
+    width: 140px;
+    /*left: 387px;*/
+    float: right !important;
+    /*display: inline;*/
+}
+.css-calendar-highlight {
+    background-color: #65ecaf !important;
+    border: 1px solid #65ecaf !important;
+    color: #ffffff !important;
+}
+.css-calender-other {
+    background-color: transparent !important;
+    border: 1px solid #65ecaf !important;
+    color: #65ecaf !important;
+}
+.css-reservTable {
+    position: relative;
+    margin: 0 auto;
+    width: 95%;
+    height: auto;
+    margin-top: 10px;
+}
+.css-page-hr2 {
+  margin-bottom: 0px;
+}
+.js-reserv-condition {
+    width: auto !important;
+}
+.js-return-condition {
+    resize: none;
+}
+.css-status {
+    height: 20px !important;
+    border-radius: 10px;
+    width: 20px !important;
+    margin: 0 auto;
+}
+.css-pad {
+    padding: 12px 12px 12px 6px !important;
+}
+.css-time-period {
+    position: relative;
+    width: auto !important;
+    margin: 0 auto !important;
+    padding: 0px;
+    text-align: center;
+}
+.css-time-period div {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+@media screen and (max-width: 531px) {
+    .fc-center h2 {
+      margin: 10px 0px -5px 0px !important;
+    }
+}

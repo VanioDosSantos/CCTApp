@@ -1,0 +1,375 @@
+/* Hex Colors
+ *
+ * #ffffff Background Color
+ * #419bf9 Nav Bar Color/Side Nav Accent
+ * #126AC0 Nav Highlight
+ * #252525 Font Color/Side Nav
+ * #00a900 Font Accent Color
+ * #65ecaf Creation Button Color
+ * #aaaaaa Regular Button
+ * #1D3267 Map
+ */
+
+* {
+    font-family: Quicksand;
+    margin: 0;
+}
+html, body {
+    background-color: #ffffff;
+    margin: 0 auto;
+    height: 100%;
+}
+.link {
+    text-decoration: none;
+    color: #666666;
+}
+.link:hover {
+    text-decoration: none;
+    color: #acacac;
+}
+.link:focus {
+    color: #666666;
+    text-decoration: none;
+}
+.row {
+    margin: 0px !important;
+}
+.css-loading {
+    position: relative;
+    color: #419bf9;
+    text-align: center;
+    top: 200px;
+    font-weight: bold;
+    font-size: 34px;
+}
+.badge {
+  /*color: #126AC0;*/
+  background-color:  #126AC0;
+}
+.btn {
+    background-color: #65ecaf;
+    border: 1px solid #65ecaf;
+    width: auto;
+    color: #ffffff;
+    transition: 0.2s background-color ease-in-out;
+}
+.btn:hover {
+    color: #65ecaf;
+    background-color: transparent;
+}
+.btn:focus {
+    outline: none !important;
+    color: inherit;
+}
+.css-btn-size {
+    width: 300px !important;
+}
+.css-alert {
+    text-align: center;
+    z-index: 2345;
+}
+.css-display-none {
+  display: none;
+}
+.css-nav {
+    position: fixed;
+    background-color: #419bf9;
+    margin: 0 auto;
+    width: 100%;
+    height: 50px;
+    z-index: 100;
+}
+
+.css-nav-border {
+    background-color: #126AC0;
+
+}
+
+.css-nav-border-placeholder {
+    border-bottom: 2px solid transparent;
+    transition: 0.4s background-color ease-in-out;
+    height: 3px;
+    width: 100%;
+}
+
+.css-more {
+    display: none;
+    position: absolute;
+    top: 9px;
+    font-size: 32px;
+    color: #FFFFFF;
+    transition: 0.15s color ease-in-out;
+    z-index: 85;
+}
+.css-more:hover {
+    color: #126AC0;
+}
+.css-notification-contain {
+  background-color: pink;
+  float: right;
+  right: 50px;
+  top: -36px;
+}
+.css-notification {
+  display: none;
+  position: absolute;
+  /*top: 9px;*/
+  /*font-size: 32px;*/
+  /*float: right;*/
+  /*left: 0px;*/
+  color: #FFFFFF;
+  transition: 0.15s color ease-in-out;
+  z-index: 85;
+  padding: 10px; /* remove if problem */
+}
+.css-notif-seen {
+  background-color: transparent;
+  transition: 0.15s background-color ease-in-out;
+}
+.css-notif-not-see {
+  background-color: orange;
+}
+.css-link-slide-nav-container {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.40);
+    width: 100%;
+    height: 100%;
+    z-index: 80;
+    display: none;
+}
+.css-link-slide-nav .css-empty {
+  margin-bottom: 10px;
+}
+.css-link-slide-nav {
+    position: fixed;
+    height: 100% !important;
+    width: 300px;
+    background-color: #124E88;
+    right: 100%;
+    z-index: 81 !important;
+    overflow-y: auto;
+
+}
+.css-side-link {
+  width: 100%;
+  text-indent: 30px;
+  padding: 20px;
+  color: #FFFFFF;
+  transition: 0.4s background-color ease-in-out;
+}
+.css-side-link:hover {
+  background-color: #84C0FF;
+}
+.css-horizontal-line {
+  width: 75%;
+  margin: auto;
+  color: #84C0FF !important;
+}
+.css-nav .css-nav-link-container {
+    height: 100%;
+    transition: 0.1s background-color ease-in-out;
+}
+.css-nav .css-nav-link-container:hover {
+    background-color: #84C0FF;
+}
+.css-nav-highlight {
+    background-color: #126AC0 !important;
+}
+.col-sm-2 {
+    margin: 0 auto;
+    padding: 0px;
+}
+.col-sm-1 {
+    margin: 0 auto;
+    padding: 0px;
+}
+.css-brand {
+    position: relative;
+    font-size: 30px;
+    color: #ffffff;
+    font-family: Quicksand-Bold;
+    text-align: center;
+    height: 100%;
+    padding: 0px;
+    padding-top: 3px;
+}
+.css-nav-link-container {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    font-size: 12px;
+    height: 100%;
+}
+/*.css-nav-link-container a {
+    background-color: red;
+}*/
+.css-nav-link {
+    height: 100%;
+    color: #ffffff;
+    padding-top: 16px;
+}
+.dropdown .glyphicon {
+  font-size: 20px;
+  color: #FFFFFF;
+  padding: 14px 0px 14px 0px;
+}
+.css-more-menu {
+  float: right !important;
+  top: 50px !important;
+  left: -165px !important;
+}
+.css-notif-menu {
+  float: right !important;
+  top: 50px !important;
+  left: -359px !important;
+  width: 400px !important;
+  overflow-y: scroll;
+  max-height: 400px;
+}
+.dropdown-menu li {
+  padding: 10px 15px 10px 15px;
+}
+.css-page {
+    position: relative;
+    margin: 0 auto;
+    height: auto !important;
+}
+.css-page .col-sm-12 {
+    width: 100% !important;
+    padding: 0px;
+}
+.container-fluid {
+    width: auto !important;
+    padding: 0px;
+    margin: 0px;
+}
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+.css-side-nav-container {
+  min-width: 110px;
+}
+.css-content-container {
+  width: -webkit-calc(100% - 110px);
+  width:    -moz-calc(100% - 110px);
+  width:         calc(100% - 110px);
+  padding: 0px;
+}
+.css-side-nav {
+    position: fixed !important;
+    height: 100% !important;
+    width: 100px;
+    background-color: #252525;
+    transition: 0.3s width ease-in-out;
+    z-index: 99;
+}
+.css-side-nav:hover {
+    width: 110px;
+}
+
+.nav a:hover {
+    background-color: transparent !important;
+}
+.css-empty {
+    position: relative;
+    height: 50px !important;
+}
+.nav li {
+    text-align: center;
+    color: #ffffff;
+    font-size: 11px;
+    position: relative;
+    margin: 12px;
+    height: 100px;
+    transition: 0.2s color ease-in-out;
+}
+.nav li:hover {
+    color: #419bf9;
+}
+.nav li img {
+    padding: 3px;
+    border-radius: 50%;
+    transition: 0.3s background-color ease-in-out;
+    opacity: 0.4;
+}
+
+.nav li p {
+    padding: 2px;
+    border-radius: 4px;
+    transition: 0.3s background-color ease-in-out;
+}
+
+.css-sidenav-highlight {
+    color: #126AC0 !important;
+}
+
+.css-sidenav-highlight img {
+    background-color: #126AC0;
+    padding: 3px;
+    border-radius: 50%;
+    opacity: 1.0 !important;
+    transition: 0.3s opacity ease-in-out;
+}
+
+.css-sidenav-highlight p {
+    background-color: rgba(18, 106, 193, 0.7);
+    color: #ffffff;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.nav .glyphicon {
+    font-size: 40px !important;
+}
+.css-side-nav-link {
+    position: relative;
+    top: 15px;
+}
+
+.css-side-icons {
+    margin-bottom: 5px;
+}
+
+.css-side-nav-admin {
+    height: 25px !important;
+    font-size: 12px !important;
+    font-family: Quicksand-bold;
+    color: #ffffff;
+}
+.css-yield-container {
+    height: auto !important;
+    width: 95%;
+    position: relative;
+    margin: 0 auto;
+}
+@media screen and (max-width: 1362px) {}
+@media screen and (max-width: 959px) {}
+@media screen and (max-width: 767px) {
+    .css-nav .css-nav-link-container {
+        display: none;
+    }
+    .css-more {
+        display: inline;
+    }
+    .css-notification {
+      display: inline;
+    }
+    .css-side-nav-container {
+      display: none;
+    }
+    .css-display-none {
+      display: block;
+    }
+    .css-background-pic {
+      height: 335px !important;
+    }
+    .css-content-container {
+      width: 100%;
+    }
+    .css-notif-menu {
+      width: 300px !important;
+      left: -259px !important;
+    }
+}
+@media screen and (max-width: 640px) {}

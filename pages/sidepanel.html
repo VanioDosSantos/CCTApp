@@ -1,0 +1,33 @@
+<template name="sidepanel">
+    <div class="css-hours-container">
+        <h4>Info Booth</h4>
+        <span class="{{today 'Weekday'}}">M, T, W, Th: 10AM - 10PM</span>
+        <br>
+        <span class="{{today 'Friday'}}">Friday: 10AM - 6PM</span>
+        <br>
+        <span class="{{today 'Saturday'}}">Saturday: 4PM - 12AM</span>
+        <br>
+        <span class="{{today 'Sunday'}}">Sunday: 4PM - 11PM</span>
+        <br>
+        <a href="tel:781-736-4770"><span class="css-phone-number">781-736-4770</span></a>
+        <br>
+
+        <h4>Game Room</h4>
+        <span class="{{today 'Weekday'}}">M, T, W, Th: 11AM - 11PM</span>
+        <br>
+        <span class="{{today 'Friday'}}">Friday: 1PM - 12AM</span>
+        <br>
+        <span class="{{today 'Saturday'}}">Saturday: 1PM - 12AM</span>
+        <br>
+        <span class="{{today 'Sunday'}}">Sunday: 1PM - 8PM</span>
+        <br>
+        <a href="tel:781-736-4772"><span class="css-phone-number">781-736-4772</span></a>
+        <br>
+        <br>
+
+        <a href="{{pathFor 'department'}}">Department Staff</a>
+        <br>
+        <br>
+
+    </div>
+</template>

@@ -1,0 +1,36 @@
+<template name="overview">
+    <div class="container">
+      <div class="css-page-header">
+          <h2>Operations Overview<span class="css-label-header"></span></h2>
+      </div>
+
+      {{#if problem}}
+      <table class="table table-condensed">
+          <thead>
+              <tr>
+                  <th class="css-table-column-hide"></th>
+                  <th>Problem</th>
+                  <th>Category</th>
+                  <th class="css-table-column-hide">by</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              {{#each problem}}
+              <tr>
+                  <td class="css-pad css-table-column-hide">{{time}}</td>
+                  <td class="css-pad">{{text}}</td>
+                  <td class="css-pad" style="color: {{hex}}; font-weight: bold;">{{category}}</td>
+                  <td class="css-pad css-table-column-hide">{{by}}</td>
+                  <td>
+                    <input class="js-problem-solved btn" type="button" value="Solved">
+                  </td>
+              </tr>
+              {{/each}}
+          </tbody>
+      </table>
+      {{else}}
+      <h4 style="text-align: center;">All good. No headaches to report.</h4>
+      {{/if}}
+    </div>
+</template>

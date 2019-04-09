@@ -1,0 +1,225 @@
+<template name="home">
+
+    <div class="slideShow">
+        <div id="slider">
+            <div class="one" id="1"></div>
+            <div class="two" id="2"></div>
+            <div class="three" id="3"></div>
+        </div>
+        <!-- <a class="btnSlide" href="#"><sspanan id="spanrevBtn" class="glyspanhicon glyspanhicon-chevron-left"></sspanan></a> -->
+        <!-- <a class="btnSlide next" href="#"><sspanan id="nextBtn" class="glyspanhicon glyspanhicon-chevron-right"></sspanan></a> -->
+        <a href="#"><span class="css-more-arrow glyphicon glyphicon-triangle-bottom"></span></a>
+    </div>
+
+    <div class="css-home-stripOne">
+        <div class="container">
+            <div class="css-center-header">
+                <h4 class="cs-home-h4">Hours + Contact</h4>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="css-cct-info">
+                        <span>Info Booth</span>
+                        <br>
+                        <span class="{{today 'Weekday'}}">M, T, W, Th: 10AM - 10PM</span>
+                        <br>
+                        <span class="{{today 'Friday'}}">Friday: 10AM - 6PM</span>
+                        <br>
+                        <span class="{{today 'Saturday'}}">Saturday: 4PM - 12AM</span>
+                        <br>
+                        <span class="{{today 'Sunday'}}">Sunday: 4PM - 11PM</span>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="css-cct-info">
+                        <span>Game Room</span>
+                        <br>
+                        <span class="{{today 'Weekday'}}">M, T, W, Th: 11AM - 11PM</span>
+                        <br>
+                        <span class="{{today 'Friday'}}">Friday: 1PM - 12AM</span>
+                        <br>
+                        <span class="{{today 'Saturday'}}">Saturday: 1PM - 12AM</span>
+                        <br>
+                        <span class="{{today 'Sunday'}}">Sunday: 1PM - 8PM</span>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="css-cct-info">
+                        <a href="tel:781-736-4770"><span>Info Booth: 781-736-4770</span></a>
+                        <br>
+                        <a href="tel:781-736-4772"><span>Game Room: 781-736-4772</span></a>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="css-home-todayEvents">
+        <div class="row">
+            <div class="css-center-headerTwo">
+                <div class="cs-home-h4">
+                  <h3>{{todayDate}}</h3>
+                  {{#if admin}}<a class="js-new-event link" href="#"><span class="glyphicon glyphicon-plus"></span></a>{{/if}}
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-12" style="background-color: #F8F8F8;">
+                <div class="css-home-table">
+
+                    {{#if sccEvent}}
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;">Room</th>
+                                <th style="text-align: center;">Event</th>
+                                <th style="text-align: center;">Time</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            {{#each sccEvent}}
+                            <tr>
+                                <td class="css-pad" style="text-align: center;">{{room}}</td>
+                                <td class="css-pad" style="text-align: center;">{{event}}</td>
+                                <td class="css-pad" style="text-align: center;">{{time}}</td>
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+
+                    </table>
+                    {{else}}
+                    <h4 style="text-align: center;">No Events Today</h4> {{/if}}
+
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div class="css-home-stripTwo">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="css-home-text">
+                    <h3 class="css-dark-header">About us</h3>
+                    <br>
+                    <p>
+                        The Campus Center Team functions as the operating staff of the Shapiro Campus Center and parts of the Usdan Student Center. The students are easily recognized by their bright red or orange uniforms and huge smiles. Along with providing customer service
+                        and information to thousands of visitors a year, the team also helps to support logistical and technical aspects of events in the Shapiro Campus Center.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="css-home-stripThree x">
+        <div class="row">
+            <div class="col-sm-6 css-gradient">
+                <div class="css-home-text">
+                    <h3 class="css-accent-header">Our duties</h3>
+                    <p>
+                        At the Info Booth, students can borrow dry erase markers for the conference and study rooms (as available), pick up campus and MBTA maps, pick up and return departmental forms, gain access to locked conference rooms, and gain answers to general questions.
+                        In addition, clubs can borrow equipment reserved through the Department of Student Activities.
+                    </p>
+                    <br>
+                </div>
+            </div>
+            <div class="col-sm-6 css-background-pic">
+              <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="css-home-stripTwoThree">
+        <div class="row">
+            <div class="col-sm-12">
+              <img src="images/theBoss.jpg" alt="">
+                <h1 style="text-align: center;">all about #OHANA</h1>
+                <h6>&#8212; Johnny Wilson, CCT Operation Specialist</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="css-home-stripFour css-gradient">
+        <div class="container">
+            <div class="css-center-headerTwo">
+                <h4 class="cs-home-h4">What makes us CCT</h4>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="css-cct-info">
+                        <label class="css-home-label">Supervisors</label>
+                        <p>
+                            Responsible for managing the Shapiro Campus Center and Usdan Student Center during the evening hours and weekends.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="css-cct-info">
+                        <label class="css-home-label">Information Crew</label>
+                        <p>
+                            Serves as the primary point of contact for customers in the Shapiro Campus Center and Usdan Game Room.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="css-cct-info">
+                        <label class="css-home-label">Reset Crew</label>
+                        <p>
+                            Primarily responsible for adjusting furniture and other items to a professional, clean and default status. Reset Crew will also help set up rooms for special events.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="css-home-image-strip"></div>
+
+    {{> footer}}
+
+
+</template>
+
+<template name="homeEvent">
+    <!-- calendarItem -->
+    <div id="newEvent" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">SCC Event Schedule</h3>
+                </div>
+                <div class="modal-body">
+
+                    <label>Event</label>
+                    <input class="js-event-name form-control" type="text" placeholder="Event's name">
+                    <br>
+                    <label>Room</label>
+                    <input class="js-event-room form-control" type="text" placeholder="Room the event will take place">
+                    <br>
+                    <label>Time</label>
+                    <input class="js-event-time form-control" type="text" placeholder="Ex: 4PM - 6:30PM">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Nevermind</button>
+                    <button type="button" class="js-add-new-event btn" data-dismiss="modal">Add</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</template>

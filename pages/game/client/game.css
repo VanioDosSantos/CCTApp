@@ -1,0 +1,36 @@
+.js-game-submit-entry {
+  width: 100% !important;
+}
+.css-suggestion-container {
+  position: absolute;
+  height: auto;
+  width: -webkit-calc(100% - 30px);
+  width:    -moz-calc(100% - 30px);
+  width:         calc(100% - 30px);
+  border-radius: 0px 0px 5px 5px;
+  border: 1px solid #f5f5f5;
+  background-color: #FFFFFF;
+  z-index: 70;
+}
+.css-suggestion-container div {
+  padding: 0.5em 0.7em 0.5em 1em;
+  transition: 0.2s background-color ease-in-out;
+}
+.css-suggestion-container div:hover {
+  background-color: #f1f1f1;
+}
+.css-suggestion-container a {
+  text-decoration: none;
+  color: #aaaaaa;
+}
+
+@media screen and (max-width: 889px) {
+  .css-under-label {
+    font-size: 0.6em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .css-under-label {
+    font-size: 1em;
+  }
+}

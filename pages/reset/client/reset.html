@@ -1,0 +1,207 @@
+<template name="reset">
+    <div class="container">
+        <div class="css-live-tabling">
+            <div class="css-page-header">
+                <h2>SCC Tabling<span class="css-label-header">live tabling status</span></h2>
+            </div>
+        </div>
+
+        <div class="css-reset-floor-background">
+            <div class="css-reset-table-container">
+                <select class="css-reset-setup form-control">
+                    <option value="regular">Regular Setup</option>
+                    <option value="vendor">Vendor Setup</option>
+                    <option value="special">Special Setup</option>
+                </select>
+                <br>
+                <canvas id="sccAtriumPlan" height="400" width="660">
+                    Your browser does not support the HTML5 canvas tag.
+                </canvas>
+                <div class="css-reset-table" id="a">A</div>
+                <div class="css-reset-table" id="b">B</div>
+                <div class="css-reset-table" id="c">C</div>
+                <div class="css-reset-table" id="d">D</div>
+                <div class="css-reset-table" id="e">E</div>
+                <div class="css-reset-table" id="f">F</div>
+            </div>
+        </div>
+
+        <div class="css-reset-floor-key">
+
+        </div>
+
+        <a class="css-reset-view-floorplan" href="#">View Tabling Floor Plan</a>
+
+        <div class="css-page-header">
+            <h2>Reset<span class="css-label-header">like it never even happened.</span></h2>
+        </div>
+
+        <div class="css-calendar-container">
+
+            <div class="css-calendar-btns pull-right">
+                <button class="btn css-reset-calendar-prev" type="button">Previous</button>
+                <button class="btn css-reset-calendar-next" type="button">Next</button>
+            </div>
+
+            <div class="css-calendar-view-btns">
+                <button class="btn css-month-view {{currentView 'month'}}" type="button">Month</button>
+                <button class="btn css-week-view {{currentView 'week'}}" type="button">Week</button>
+            </div>
+
+            <div class="css-calendar" id="reset-calendar"></div>
+
+        </div>
+
+
+
+        <div class="css-page-header">
+            <h2>Event Issues<span class="css-label-header">sent to Johnny and supers.</span></h2>
+        </div>
+
+        <div class="css-page-header">
+            <h2>SCC Room Reservations<span class="css-label-header">occupation status.</span></h2>
+        </div>
+
+        <div class="css-page-header">
+            <h2>SCC Rounds<span class="css-label-header">checklist by floor.</span></h2>
+        </div> <!--you can do a reminder system -->
+
+
+
+    </div>
+</template>
+
+<template name="newReset">
+
+    <div class="modal fade" id="reset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myModalLabel">Schedule Reset</h3>
+                </div>
+
+                <div class="modal-body row">
+                    <div class="col-sm-12">
+                        <label>Setup or Reset</label>
+                        <select class="js-reset-type form-control">
+                            <option value="setup">Setup</option>
+                            <option value="reset">Reset</option>
+                        </select>
+                        <br>
+                        <label>Event</label>
+                        <input class="js-reset-event form-control" type="text" placeholder="Enter name of event.">
+                        <br>
+                        <label>Reset Location</label>
+                        <select class="js-reset-location form-control">
+                            <option value="mpr">Multi Purpose Room (MPR)</option>
+                            <option value="atrium">Atrium</option>
+                            <option value="313">Room 313</option>
+                            <option value="314">Room 314</option>
+                            <option value="315">Room 315</option>
+                        </select>
+                        <br>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label>Reset Time</label>
+                        <div class="css-time-period">
+                            <div class="col-sm-5">
+                                <input class="js-reset-from form-control css-form-control" id="datetimepickerResetFrom" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <span style="text-align: center !important;">until</span>
+                            </div>
+                            <div class="col-sm-5">
+                                <input class="js-reset-until form-control css-form-control pull-right" id="datetimepickerResetUntil" type="text">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label>Notes<span class="css-label-title">560 characters max.</span></label>
+                        <textarea class="js-reset-notes css-textarea-description form-control" rows="3" cols="20" maxlength="560"></textarea>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">False alarm</button>
+                    <button type="button" class="js-reset-room-reserv btn">Set Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<template name="resetInfo">
+
+    <div class="modal fade" id="resetInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myModalLabel">Reset Information</h3>
+                </div>
+
+                <div class="modal-body row">
+                    <!-- what kind of information should be displayed? -->
+                    Display: entry type (setup/reset) reset team from all the entire team reset start reset end reset location event (from SCCEvents collection) notes
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">All Set (Get it)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<template name="reservTable">
+
+    <div class="modal fade" id="resetTable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myModalLabel">Reserve Table</h3>
+                </div>
+
+                <div class="modal-body row">
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="js-reset-table-reserv btn">DONE!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<template name="sccFloorPlan">
+
+    <div class="modal fade" id="sccFloorPlan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body row">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="myModalLabel">SCC Tabling Floor</h3>
+                    </div>
+
+                    <div class="modal-body row">
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">- Ok -</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

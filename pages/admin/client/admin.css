@@ -1,0 +1,58 @@
+.css-side-pane {
+  height: 500px !important;
+  margin: 30px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  min-height: 500px !important;
+}
+.css-btn-size {
+  width: 100% !important;
+}
+.css-pane {
+  position: fixed;
+  width: auto;
+  height: 100% !important;
+  padding: 30px 0px 0px 5px;
+  border-left: 1px solid #E5E5E5;
+}
+.form-control {
+  border: 1px solid #f6f6f6;
+  box-shadow: none;
+}
+.css-signup-form {
+  position: relative;
+  margin: 0 auto;
+  width: 97%;
+}
+.css-signup-form .col-sm-5, .col-sm-2, .col-sm-10 {
+  margin: 0 auto !important;
+  padding: 0px 10px 0px 10px !important;
+}
+.css-full-btn {
+  position: relative;
+  float: right;
+  width: 100% !important;
+}
+.css-label-title {
+  font-size: 12px;
+  color: #65ecaf;
+  font-weight: lighter;
+  margin-left: 10px;
+}
+.css-label-header {
+  font-size: 18px;
+  color: #aaaaaa;
+  font-weight: lighter;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 1362px) {}
+@media screen and (max-width: 959px) {}
+@media screen and (max-width: 767px) {
+    /*.css-page-header h2 {
+      font-size: 50% !important;
+    }*/
+    .css-label-header {
+      font-size: 40%;
+    }
+}
+@media screen and (max-width: 640px) {}
